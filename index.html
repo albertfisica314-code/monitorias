@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitorias de Matemática e Física — Professor Albert</title>
+<meta name="description" content="Reforço de Matemática (6º ao 9º ano), Cálculo e Física I. Monitorias online, no período da noite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0F3D3E;--teal2:#16504F;--cream:#F6F0E4;--paper:#FFFBF3;--orange:#B94A18;--orange2:#EE8A4C;--ink:#2F3438;--mut:#5B6268;
+--h:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif;--b:'Figtree',system-ui,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 1.0625rem/1.6 var(--b);color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:var(--h);line-height:1.05;margin:0;color:var(--teal)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;border:0;border-radius:14px;padding:16px 28px;font:800 1.05rem var(--h);letter-spacing:.02em;cursor:pointer;text-decoration:none;background:var(--orange);color:#fff}
+.btn:hover{background:#9f3e12}.btn.ghost{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+:focus-visible{outline:3px solid var(--orange2);outline-offset:2px}
+.hero{padding:56px 0 40px;background:radial-gradient(circle,#d9d0bd 1px,transparent 1.5px) 0 0/22px 22px}
+.hero h1{font-size:clamp(2.6rem,9vw,5.6rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:block;color:var(--orange);font-size:.48em;letter-spacing:-.01em;margin-top:8px}
+.hero p{font-size:1.2rem;font-style:italic;max-width:34ch;margin:18px 0 26px}
+.areas{display:grid;gap:18px;padding:8px 0 40px}
+@media(min-width:760px){.areas{grid-template-columns:1fr 1fr}}
+.card{background:var(--teal);color:var(--cream);border-radius:56px 18px 18px 18px;padding:26px;display:grid;gap:10px;background-image:linear-gradient(#ffffff0d 1px,transparent 1px),linear-gradient(90deg,#ffffff0d 1px,transparent 1px);background-size:24px 24px}
+.card h2{color:var(--cream);font-size:1.7rem;font-weight:800}.card .sub{color:var(--orange2);font-weight:600}
+.card svg{width:100%;height:auto;max-height:170px}
+.dif{display:grid;gap:14px;padding:10px 0 40px}
+@media(min-width:760px){.dif{grid-template-columns:1fr 1fr}}
+.dif div{display:flex;gap:14px;align-items:center}
+.dif i{flex:none;width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font:800 1.1rem var(--h);font-style:normal}
+.how{background:var(--teal);color:var(--cream);padding:48px 0;border-radius:64px 0 0 0}
+.how h2{color:var(--cream);font-size:2.2rem;margin-bottom:12px}.how p{max-width:60ch}
+.how .tag{display:inline-block;margin:6px 8px 18px 0;padding:6px 14px;border-radius:99px;background:var(--orange);font-weight:600}
+footer{background:var(--teal);color:#cfd9d6;padding:0 0 36px;font-size:.9rem}
+/* formulário */
+dialog{border:0;border-radius:22px;padding:0;width:min(640px,94vw);max-height:92vh;background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:#0b2526cc}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 24px 0}
+.close{background:none;border:0;font-size:1.8rem;cursor:pointer;color:var(--mut);line-height:1}
+.bar{height:8px;background:#e6dfd0;margin:12px 24px 0;border-radius:9px;overflow:hidden}.bar b{display:block;height:100%;width:0;background:var(--orange);transition:width .3s}
+form{padding:8px 24px 24px}
+fieldset{border:0;padding:0;margin:18px 0}legend{font:800 1.25rem var(--h);color:var(--teal);padding:0;margin-bottom:10px}
+input[type=text],textarea{width:100%;font:inherit;padding:13px 14px;border:2px solid #cfc6b3;border-radius:12px;background:#fff}
+textarea{min-height:110px;resize:vertical}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:12px;align-items:center;padding:13px 14px;border:2px solid #cfc6b3;border-radius:12px;background:#fff;cursor:pointer}
+.opt:has(input:checked){border-color:var(--orange);background:#fff1e6}
+.opt input{accent-color:var(--orange);width:20px;height:20px;flex:none}
+.note{background:#e3efec;border-left:6px solid var(--teal);padding:12px 14px;border-radius:8px;font-weight:600;color:var(--teal)}
+.hint{color:var(--mut);font-size:.95rem;margin:4px 0 10px}
+.err{color:#a3200d;font-weight:600;min-height:1.4em}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:10px}
+.sum{display:grid;gap:8px;margin:0}.sum div{padding:10px 14px;background:#fff;border-radius:10px;border:1px solid #e2dac8}
+.sum dt{font-size:.85rem;color:var(--mut)}.sum dd{margin:0;font-weight:600}
+.priv{font-size:.92rem;color:var(--mut)}
+.done{text-align:center;padding:10px 0}.done h2{font-size:2rem;margin:6px 0 10px}
+.wa{background:#1b7f4b;font-size:1.1rem}.wa:hover{background:#13633a}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <h1>MONITORIAS<span>DE MATEMÁTICA E FÍSICA</span></h1>
+  <p>Compreenda os conceitos, desenvolva o seu raciocínio e prepare-se para as suas avaliações.</p>
+  <button class="btn" data-open>DESEJO SABER MAIS</button>
+</div></header>
+
+<main>
+<section class="wrap areas" aria-label="Monitorias oferecidas">
+  <article class="card">
+    <h2>REFORÇO DE MATEMÁTICA</h2><div class="sub">Ensino Fundamental — do 6º ao 9º ano</div>
+    <svg viewBox="0 0 300 130" fill="none" stroke="#F6F0E4" stroke-width="2" aria-hidden="true"><path d="M20 10v100h260M20 110"/><path d="M20 108C80 108 100 30 150 30s70 78 130 78" stroke="#EE8A4C" stroke-width="3"/><path d="M60 108 90 30 130 108Z" stroke-dasharray="5 5" opacity=".6"/><text x="196" y="62" fill="#F6F0E4" stroke="none" font-size="18" font-style="italic" font-family="serif">y = ax² + bx + c</text></svg>
+  </article>
+  <article class="card">
+    <h2>MONITORIAS PARA O ENSINO SUPERIOR</h2><div class="sub">Cálculo e Física I — Mecânica</div>
+    <svg viewBox="0 0 300 130" fill="none" stroke="#F6F0E4" stroke-width="2" aria-hidden="true"><path d="M20 118h270"/><path d="M30 118Q110 -20 190 50T270 118" stroke="#EE8A4C" stroke-width="3" stroke-dasharray="7 6"/><path d="M30 118 62 74" stroke-width="3"/><path d="M130 22v34m-6-8 6 10 6-10" stroke="#EE8A4C"/><circle cx="130" cy="20" r="6" fill="#F6F0E4"/><text x="196" y="40" fill="#F6F0E4" stroke="none" font-size="18" font-style="italic" font-family="serif">ΣF = ma</text><text x="196" y="66" fill="#F6F0E4" stroke="none" font-size="18" font-style="italic" font-family="serif">∫ f(x) dx</text></svg>
+  </article>
+</section>
+
+<section class="wrap dif" aria-label="Diferenciais">
+  <div><i>1</i>Explicações claras e organizadas</div>
+  <div><i>2</i>Resolução orientada de exercícios</div>
+  <div><i>3</i>Revisão de conteúdos e preparação para avaliações</div>
+  <div><i>4</i>Atendimento online no período da noite</div>
+</section>
+
+<section class="how"><div class="wrap">
+  <h2>Como funcionam as monitorias?</h2>
+  <span class="tag">100% online</span><span class="tag">Período da noite</span>
+  <p>As monitorias acontecem online, no período da noite. Após preencher o formulário, você poderá entrar em contato pelo WhatsApp para esclarecer dúvidas, conhecer o funcionamento do atendimento e conversar sobre as condições de atendimento. Os dias das monitorias dependem, em grande parte, do consenso da turma.</p>
+  <p><button class="btn" data-open>DESEJO SABER MAIS</button></p>
+</div></section>
+</main>
+<footer><div class="wrap"><p>Professor Albert — graduando em Física.</p></div></footer>
+
+<dialog id="dlg" aria-labelledby="ttl">
+  <div class="top"><strong id="ttl" style="font-family:var(--h);color:var(--teal)">Formulário de interesse</strong><button class="close" id="x" aria-label="Fechar">×</button></div>
+  <div class="bar" role="progressbar" aria-label="Progresso" aria-valuemin="0" aria-valuemax="100"><b id="pb"></b></div>
+  <form id="f" novalidate>
+    <section data-step="1">
+      <fieldset><legend><label for="nome">Informe o seu nome.</label></legend><input type="text" id="nome" name="nome" autocomplete="given-name" maxlength="80"></fieldset>
+      <fieldset><legend>Para qual nível de ensino deseja a monitoria?</legend><div class="opts">
+        <label class="opt"><input type="radio" name="nivel" value="Ensino Fundamental">Ensino Fundamental</label>
+        <label class="opt"><input type="radio" name="nivel" value="Ensino Superior">Ensino Superior</label></div></fieldset>
+    </section>
+    <section data-step="2" hidden>
+      <div data-branch="Ensino Fundamental">
+        <fieldset><legend>Qual é o seu ano escolar?</legend><div class="opts" id="ano"></div></fieldset>
+        <fieldset><legend>Qual é o seu principal objetivo com as monitorias?</legend><div class="opts" id="objF"></div></fieldset>
+      </div>
+      <div data-branch="Ensino Superior" hidden>
+        <fieldset><legend><label for="curso">Qual é o seu curso de graduação?</label></legend><input type="text" id="curso" maxlength="80"><p class="hint">Opcional.</p></fieldset>
+        <fieldset><legend>Qual monitoria deseja cursar?</legend><div class="opts" id="mon"></div></fieldset>
+        <fieldset><legend>Qual é o seu principal objetivo?</legend><div class="opts" id="objS"></div></fieldset>
+      </div>
+    </section>
+    <section data-step="3" hidden>
+      <p class="note">As monitorias são exclusivamente online e acontecem no período da noite. Os dias das monitorias dependem, em grande parte, do consenso da turma.</p>
+      <fieldset><legend>Deseja conversar antes de combinar as monitorias?</legend><p class="hint">Opcional.</p><div class="opts" id="conv"></div></fieldset>
+    </section>
+    <section data-step="4" hidden>
+      <fieldset><legend><label for="obs">Deseja acrescentar alguma informação?</label></legend>
+        <p class="hint">Se desejar, descreva brevemente o que procura nas monitorias ou registre alguma pergunta. Também é possível conversar diretamente pelo WhatsApp.</p>
+        <textarea id="obs" maxlength="500"></textarea></fieldset>
+    </section>
+    <section data-step="5" hidden>
+      <fieldset><legend>Revise as suas respostas</legend><dl class="sum" id="sum"></dl></fieldset>
+      <p class="priv">As suas respostas permanecem apenas neste aparelho até o envio da mensagem pelo WhatsApp. Serão utilizadas somente para responder ao seu contato e organizar o atendimento das monitorias. Não são solicitados CPF, endereço ou documentos. Caso o interessado seja menor de 18 anos, recomenda-se que um responsável acompanhe a conversa.</p>
+      <label class="opt"><input type="checkbox" id="ok">Li e concordo com a utilização das minhas respostas para essa finalidade.</label>
+    </section>
+    <section data-step="6" hidden class="done">
+      <h2>Formulário concluído. Podemos conversar.</h2>
+      <p>Agradeço o seu interesse nas monitorias.</p>
+      <p>Os atendimentos ocorrem online, no período da noite. Entre em contato pelo WhatsApp para esclarecer dúvidas, conhecer o funcionamento das monitorias e conversar sobre as condições de atendimento.</p>
+      <p><a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">CONVERSAR PELO WHATSAPP</a></p>
+      <p class="priv">O WhatsApp será aberto com a mensagem preparada. Ela somente será enviada após a sua confirmação, ao selecionar a opção de envio.</p>
+    </section>
+    <p class="err" id="err" role="alert"></p>
+    <div class="nav" id="nav"><button type="button" class="btn ghost" id="back">Voltar</button><button type="button" class="btn" id="next">Continuar</button></div>
+  </form>
+</dialog>
+
+<script>
+// ===== CONFIGURAÇÃO — altere só aqui =====
+// Número do WhatsApp: código do país + DDD + número, só dígitos. (Número do cartaz: 79 9996-7663 — confirme.)
+const WHATSAPP_NUMBER = "5579999967663";
+// =========================================
+const $=s=>document.querySelector(s);
+const fill=(id,name,list,type='radio')=>{$(id).innerHTML=list.map(v=>`<label class="opt"><input type="${type}" name="${name}" value="${v}">${v}</label>`).join('')};
+fill('#ano','ano',['6º ano','7º ano','8º ano','9º ano']);
+fill('#objF','objF',['Reforçar meus conhecimentos em Matemática','Preparar-me para provas e avaliações','Acompanhar melhor os conteúdos da escola','Tirar dúvidas e aprender a resolver exercícios','Ainda não tenho certeza e desejo conversar']);
+fill('#mon','mon',['Cálculo','Física I — Mecânica','Ambas as monitorias']);
+fill('#objS','objS',['Compreender melhor a teoria','Aprender a resolver exercícios','Preparar-me para provas e avaliações','Acompanhar melhor as disciplinas durante o semestre','Reforçar meus conhecimentos','Ainda não tenho certeza e desejo conversar']);
+fill('#conv','conv',['Sim, desejo esclarecer algumas dúvidas','Sim, desejo conhecer melhor o funcionamento das monitorias','Não, prefiro conversar diretamente sobre o atendimento','Ainda não tenho certeza']);
+
+const dlg=$('#dlg'),err=$('#err');let step=1;
+const val=n=>(document.querySelector(`input[name=${n}]:checked`)||{}).value||'';
+const nivel=()=>val('nivel');
+function data(){const f=nivel()==='Ensino Fundamental';return{
+ nome:$('#nome').value.trim(),nivel:nivel(),
+ ac:f?val('ano'):$('#curso').value.trim(),acLabel:f?'Ano escolar':'Curso',
+ mon:f?'Reforço de Matemática':val('mon'),obj:f?val('objF'):val('objS'),
+ conv:val('conv'),obs:$('#obs').value.trim()}}
+function check(){const d=data();
+ if(step===1){if(!d.nome)return'Informe o seu nome para continuar.';if(!d.nivel)return'Selecione o nível de ensino.'}
+ if(step===2){if(d.nivel==='Ensino Fundamental'&&(!d.ac||!d.obj))return'Informe o ano escolar e o objetivo.';
+  if(d.nivel==='Ensino Superior'&&(!d.mon||!d.obj))return'Selecione a monitoria e o objetivo.'}
+ if(step===5&&!$('#ok').checked)return'Assinale a caixa de concordância para prosseguir.';return''}
+function show(){document.querySelectorAll('[data-step]').forEach(s=>s.hidden=+s.dataset.step!==step);
+ document.querySelectorAll('[data-branch]').forEach(b=>b.hidden=b.dataset.branch!==nivel());
+ $('#pb').style.width=Math.min(step,5)/5*100+'%';$('#back').style.visibility=step>1&&step<6?'visible':'hidden';
+ $('#nav').hidden=step===6;$('#next').textContent=step===5?'Gerar mensagem':'Continuar';err.textContent='';
+ if(step===5)summary();dlg.scrollTop=0}
+function summary(){const d=data(),r=[['Nome',d.nome],['Nível de ensino',d.nivel],[d.acLabel,d.ac],['Monitoria desejada',d.mon],['Objetivo',d.obj],['Conversar antes',d.conv],['Observação',d.obs]].filter(x=>x[1]);
+ $('#sum').innerHTML=r.map(([k,v])=>`<div><dt>${k}</dt><dd></dd></div>`).join('');
+ document.querySelectorAll('#sum dd').forEach((e,i)=>e.textContent=r[i][1])}
+function link(){const d=data(),L=['Prezado Professor Albert, preenchi o formulário de interesse nas monitorias.','',`*Nome:* ${d.nome}`,`*Nível de ensino:* ${d.nivel}`];
+ if(d.ac)L.push(`*${d.acLabel==='Curso'?'Curso':'Ano escolar'}:* ${d.ac}`);
+ L.push(`*Monitoria desejada:* ${d.mon}`,`*Objetivo:* ${d.obj}`);
+ if(d.conv)L.push(`*Conversar antes:* ${d.conv}`);if(d.obs)L.push(`*Observação:* ${d.obs}`);
+ L.push('','Gostaria de conversar sobre as condições de atendimento. Aguardo o seu retorno.');
+ return`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(L.join('\n'))}`}
+$('#next').onclick=()=>{const m=check();if(m){err.textContent=m;return}
+ if(step===5){$('#wa').href=link()}step++;show()};
+$('#back').onclick=()=>{step--;show()};
+document.querySelectorAll('input[name=nivel]').forEach(i=>i.onchange=show);
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{step=1;$('#f').reset();show();dlg.showModal()});
+$('#x').onclick=()=>dlg.close();
+</script>
+</body>
+</html>
